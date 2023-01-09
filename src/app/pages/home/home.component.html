@@ -1,6 +1,5 @@
 <div class="container-sm m-auto mt-5">
 
-
     <div class="text-center row d-flex flex-column border p-4 bg-info bg-opacity-25 rounded-5 border-dark border-3">
         <h4 class="mb-4">USO DE PIPES</h4>
         <div class="row d-flex justify-content-center">
@@ -10,11 +9,10 @@
         <p class="">Resultado: <span class="fw-bolder">{{texto | uppercase}}</span></p>
     </div>
 
-
     <div class="text-center row d-flex flex-column border mt-5 p-4 bg-success bg-opacity-75 rounded-5 border-dark border-3">
         <h4 class="mb-4">CURRENCY PIPES</h4>
         <div class="row d-flex justify-content-center">
-            <label for="monto" class="col-2 mb-4 text-light">Monto: </label>
+            <label for="monto" class="col-3 mb-4 text-light">Monto: </label>
             <input type="number" id="monto" [(ngModel)]="monto" class="col-5 mb-4">
         </div>
         <div class="row d-flex justify-content-center mb-4">
@@ -25,4 +23,36 @@
         </div>
         <p class="text-light">Su moneda y monto es: <span class="fw-bolder">{{monto | currency:seleccionado}}</span></p>
     </div>
+
+    <div class="text-center row d-flex flex-column border mt-5 p-4 bg-warning bg-opacity-50 rounded-5 border-dark border-3">
+        <h4 class="mb-5">JSON PIPES</h4>
+        <div class="row d-flex justify-content-center">
+            <label for="apell" class="col-3 mb-4">Apellido: </label>
+            <input type="text" id="apell" [(ngModel)]="apell" class="col-5 mb-4">
+        </div>
+        <div class="row d-flex justify-content-center mb-4">
+            <label for="casado" class="col-3 mb-4">Casado: </label>
+            <select name="" id="casado" [(ngModel)]="casado" class="col-5 mb-3 px-1">
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <label for="dir" class="col-3 mb-4">Dirección: </label>
+            <input type="text" id="dir" [(ngModel)]="dir" class="col-5 mb-4">
+        </div>
+        <div class="row d-flex justify-content-center">
+            <label for="nom" class="col-3 mb-4">Nombre: </label>
+            <input type="text" id="nom" [(ngModel)]="nom" class="col-5 mb-4">
+        </div>
+        <div class="row d-flex justify-content-center">
+            <label for="telef" class="col-3 mb-4">Teléfono: </label>
+            <input type="number" id="telef" [(ngModel)]="telef" class="col-5 mb-4">
+        </div>
+        <div>
+            <button (click)="agregar()" class="my-4">Agregar</button>
+        </div>
+        <p class="">Los datos del array son: <span class="fw-bolder">{{personas | json}}</span></p>
+    </div>
+
 </div>
