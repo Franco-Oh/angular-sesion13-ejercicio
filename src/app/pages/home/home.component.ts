@@ -9,8 +9,8 @@ export class HomeComponent implements OnInit {
 
   texto!:string;
   monto!:number;
-  monedas:string[]=["USD","EUR","S/"];
-  seleccionado!:any;
+  monedas:string[]=["USD","EUR","S/ "];
+  seleccionado!:string;
   
 
   constructor() { }

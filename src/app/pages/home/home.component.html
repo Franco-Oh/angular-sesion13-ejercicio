@@ -1,24 +1,28 @@
 <div class="container-sm m-auto mt-5">
-    <div class="text-center row d-flex flex-column border p-4">
+
+
+    <div class="text-center row d-flex flex-column border p-4 bg-info bg-opacity-25 rounded-5 border-dark border-3">
         <h4 class="mb-4">USO DE PIPES</h4>
         <div class="row d-flex justify-content-center">
             <label for="txt" class="col-2 mb-4">Valor: </label>
             <input type="text" id="txt" [(ngModel)]="texto" class="col-5 mb-4">
         </div>
-        <p class="">Resultado: <span>{{texto | uppercase}}</span></p>
+        <p class="">Resultado: <span class="fw-bolder">{{texto | uppercase}}</span></p>
     </div>
-    <div class="text-center row d-flex flex-column border mt-5 p-4">
+
+
+    <div class="text-center row d-flex flex-column border mt-5 p-4 bg-success bg-opacity-75 rounded-5 border-dark border-3">
         <h4 class="mb-4">CURRENCY PIPES</h4>
         <div class="row d-flex justify-content-center">
-            <label for="monto" class="col-2 mb-4">Monto: </label>
+            <label for="monto" class="col-2 mb-4 text-light">Monto: </label>
             <input type="number" id="monto" [(ngModel)]="monto" class="col-5 mb-4">
         </div>
         <div class="row d-flex justify-content-center mb-4">
-            <select name="" id=""  class="col-5">
-                <option value="">Tipo de moneda</option>
+            <label for="moneda" class="col-3 mb-4 text-light">Tipo de moneda: </label>
+            <select name="" id="moneda" [(ngModel)]="seleccionado" class="col-4 mb-3 px-1">
                 <option [value]="item" *ngFor="let item of monedas">{{item}}</option>
             </select>
         </div>
-        <p>Su moneda es: {{monto | currency:seleccionado}}</p>
+        <p class="text-light">Su moneda y monto es: <span class="fw-bolder">{{monto | currency:seleccionado}}</span></p>
     </div>
 </div>
